@@ -1,0 +1,43 @@
+.wrapper {
+    margin-bottom: 42px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: transparent;
+
+    .button {
+        border: none;
+        background-color: transparent;
+
+        .link {
+            color: var(--primary-light-6);
+            font-size: var(--font-size-16);
+        }
+    }
+
+    .title {
+        font-weight: var(--font-weight-regular);
+        color: var(--primary-light-6);
+        font-size: var(--font-size-16);
+    }
+
+    .description {
+        font-size: var(--font-size-14);
+        color: var(--character-light-secondary-45);
+        font-weight: var(--font-weight-regular);
+    }
+
+    .actionsBlock {
+        padding: 12px 0;
+        display: flex;
+
+        .button {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+

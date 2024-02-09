@@ -7,8 +7,7 @@ import { Layout } from 'antd';
 import s from './app.module.scss';
 import { MenuApp } from '@components/menu/menuApp.tsx';
 import { HeaderApp } from '@components/header/headerApp.tsx';
-
-const { Footer } = Layout;
+import { FooterApp } from '@components/footer/footerApp.tsx';
 
 export const App = () => {
     return (
@@ -19,7 +18,7 @@ export const App = () => {
                 <Routes>
                     <Route path='/' element={<MainPage />} />
                 </Routes>
-                <Footer>footer</Footer>
+                <FooterApp />
             </Layout>
         </Layout>
     );
