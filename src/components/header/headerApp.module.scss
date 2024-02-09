@@ -5,7 +5,7 @@
         line-height: var(--font-line-height);
         background: var(--primary-light-1);
 
-        .ant-typography + h1.ant-typography, .ant-typography + h2.ant-typography, .ant-typography + h3.ant-typography, .ant-typography + h4.ant-typography, .ant-typography + h5.ant-typography {
+        .ant-typography + h1.ant-typography, {
             margin-top: 0;
         }
     }
@@ -14,7 +14,7 @@
 .wrapper {
     display: grid;
     grid-template-columns: auto 130px;
-    grid-row-gap: 16px;
+    grid-row-gap: 10px;
 
     .path {
         font-size: var(--font-size-14);
@@ -22,8 +22,10 @@
 
     .title {
         font-weight: var(--font-weight-bold);
+        line-height: var(--font-line-height);
         grid-row-start: 2;
         margin: 0;
+        padding: 4px 0 6px;
     }
 
     .button {
@@ -31,6 +33,7 @@
         box-shadow: none;
         background-color: inherit;
         grid-row-start: 2;
+        align-self: start;
     }
 }
 

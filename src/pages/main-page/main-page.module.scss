@@ -6,10 +6,14 @@
         color: var(--primary-light-9);
     }
 
-    .title {
-        font-weight: var(--font-weight-medium);
-        font-size: 20px;
-        margin: 0;
+    .textBlock {
+        margin-bottom: 16px;
+
+        .title {
+            font-weight: var(--font-weight-medium);
+            font-size: 20px;
+            margin: 0;
+        }
     }
 
     .cardsActions {
@@ -23,7 +27,7 @@
         }
 
         .contentCard {
-            padding: 12px 0;
+            padding: 10px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,6 +35,10 @@
             .button {
                 border: none;
                 color: var(--primary-light-6);
+                line-height: var(--font-line-height);
+                height: inherit;
+                box-shadow: none;
+                background-color: transparent;
             }
         }
     }

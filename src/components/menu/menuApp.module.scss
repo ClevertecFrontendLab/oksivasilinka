@@ -1,22 +1,33 @@
+:global {
+    .ant-menu-vertical .ant-menu-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .ant-menu-vertical .ant-menu-item {
+        height: 42px;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+    }
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+        border-right: none;
+    }
+}
+
 .wrapper {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
     z-index: 100;
+    position: relative;
+
 
     .logo {
         padding-top: 44px;
         padding-left: 30px;
-        margin-bottom: 68px;
-    }
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-
+        margin-bottom: 64px;
     }
 
     .icon {
-        padding-right: 10px;
+        padding:0 10px 0 0;
 
         span {
             color: var(--primary-light-9);

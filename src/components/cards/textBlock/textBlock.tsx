@@ -3,8 +3,9 @@ import { ReactNode } from 'react';
 
 type Props = {
     content: ReactNode;
+    className?: string;
 };
 
-export const TextBlock = ({ content }: Props) => {
-    return <div className={s.card}>{content}</div>;
+export const TextBlock = ({ content, className }: Props) => {
+    return <div className={`${s.card} ${className}`}>{content}</div>;
 };

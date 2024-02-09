@@ -49,6 +49,7 @@ export const MainPage: React.FC = () => {
                 }
             />
             <TextBlock
+                className={s.textBlock}
                 content={
                     <Title className={s.title} level={2}>
                         CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса.

@@ -9,7 +9,7 @@ const { Footer } = Layout;
 export const FooterApp = () => {
     return (
         <Footer className={s.wrapper}>
-            <Button className={s.button}>
+            <Button className={s.buttonLink}>
                 <Link className={s.link} href=''>
                     Смотреть отзывы
                 </Link>

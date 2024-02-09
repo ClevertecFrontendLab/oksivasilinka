@@ -1,15 +1,11 @@
-import {
-    CalendarOutlined,
-    HeartFilled,
-    IdcardOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    TrophyFilled,
-} from '@ant-design/icons';
-import { createElement, useState } from 'react';
+import { HeartFilled, TrophyFilled } from '@ant-design/icons';
+import { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { LogoMain } from '@components/icons/logo/logoMain.tsx';
 import s from './menuApp.module.scss';
+import { CalendarIcon } from '@components/icons/other/calendarIcon.tsx';
+import { ProfileIcon } from '@components/icons/other/profileIcon.tsx';
+import { TriggerMenu } from '@components/menu/triggerMenu/triggerMenu.tsx';
 
 const { Sider } = Layout;
 
@@ -19,7 +15,7 @@ export const MenuApp = () => {
     const items = [
         {
             key: '1',
-            icon: <CalendarOutlined />,
+            icon: <CalendarIcon />,
             label: 'Календарь',
         },
         {
@@ -34,19 +30,20 @@ export const MenuApp = () => {
         },
         {
             key: '4',
-            icon: <IdcardOutlined />,
+            icon: <ProfileIcon />,
             label: 'Профиль',
         },
     ];
     return (
         <Sider
-            trigger={<Trigger collapsed={collapsed} setCollapsed={setCollapsed} />}
+            trigger={null}
             collapsible
             theme={'light'}
             collapsed={collapsed}
             className={s.wrapper}
             width={208}
         >
+            <TriggerMenu collapsed={collapsed} setCollapsed={setCollapsed} />
             <div className={s.logo}>
                 <LogoMain width={'133'} height={'33'} />
             </div>
@@ -60,20 +57,5 @@ export const MenuApp = () => {
             </Menu>
             <div>Выход</div>
         </Sider>
-    );
-};
-
-type Props = {
-    collapsed: boolean;
-    setCollapsed: (collapsed: boolean) => void;
-};
-
-const Trigger = ({ collapsed, setCollapsed }: Props) => {
-    return (
-        <>
-            {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                onClick: () => setCollapsed(!collapsed),
-            })}
-        </>
     );
 };
