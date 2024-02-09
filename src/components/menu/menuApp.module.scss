@@ -1,0 +1,26 @@
+.wrapper {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    z-index: 100;
+
+    .logo {
+        padding-top: 44px;
+        padding-left: 30px;
+        margin-bottom: 68px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+    }
+
+    .icon {
+        padding-right: 10px;
+
+        span {
+            color: var(--primary-light-9);
+        }
+    }
+}
+
