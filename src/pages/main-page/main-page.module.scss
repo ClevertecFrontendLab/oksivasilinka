@@ -1,0 +1,37 @@
+.content {
+    max-width: 800px;
+    padding: 24px;
+
+    .text {
+        color: var(--primary-light-9);
+    }
+
+    .title {
+        font-weight: var(--font-weight-medium);
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .cardsActions {
+        display: flex;
+        justify-content: space-between;
+
+        .titleCard {
+            text-align: center;
+            font-weight: var(--font-weight-regular);
+            font-size: var(--font-size-16);
+        }
+
+        .contentCard {
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .button {
+                border: none;
+                color: var(--primary-light-6);
+            }
+        }
+    }
+}
