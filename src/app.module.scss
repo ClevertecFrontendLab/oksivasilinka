@@ -1,3 +1,9 @@
+:global {
+    .ant-layout.ant-layout-has-sider > .ant-layout, .ant-layout.ant-layout-has-sider > .ant-layout-content {
+        width: 100%;
+    }
+}
+
 .container {
     width: 100%;
     max-width: 1440px;
