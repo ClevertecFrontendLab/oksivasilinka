@@ -1,8 +1,13 @@
-export const LogoSmall = () => {
+type Props = {
+    width?: string;
+    height?: string;
+};
+
+export const LogoSmall = ({ width, height }: Props) => {
     return (
         <svg
-            width='110'
-            height='105'
+            width={width}
+            height={height}
             viewBox='0 0 110 105'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
@@ -12,8 +17,6 @@ export const LogoSmall = () => {
                 fill='#10239E'
             />
             <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
                 d='M2.1709 49.8452H12.3025V102.932H28.5131V49.8452H40.5263L40.5262 35.4686H28.5131L28.5131 34.2363C28.5131 31.361 29.0921 28.6305 30.25 27.3982C31.4079 26.1659 33.4342 25.4813 36.3289 25.4813C38.9342 25.4813 41.3947 25.6182 43.8553 25.8921V11.5076L38.3553 11.5076L32.9276 11.5076C26.0525 11.5076 20.6248 14.8244 17.3683 18.0113C13.1709 22.1189 12.3025 26.8426 12.3025 33.004L12.3024 35.4686H2.17083L2.1709 49.8452ZM61.5131 56.0065H45.7368V102.932H61.5131V56.0065Z'
                 fill='#10239E'
             />

@@ -1,11 +1,13 @@
 import { HeartFilled, TrophyFilled } from '@ant-design/icons';
 import { useState } from 'react';
-import { Layout, Menu } from 'antd';
+import { Button, Layout, Menu } from 'antd';
 import { LogoMain } from '@components/icons/logo/logoMain.tsx';
 import s from './menuApp.module.scss';
 import { CalendarIcon } from '@components/icons/other/calendarIcon.tsx';
 import { ProfileIcon } from '@components/icons/other/profileIcon.tsx';
 import { TriggerMenu } from '@components/menu/triggerMenu/triggerMenu.tsx';
+import { ExitIcon } from '@components/icons/other/exitIcon.tsx';
+import { LogoSmall } from '@components/icons/logo/logoSmall.tsx';
 
 const { Sider } = Layout;
 
@@ -42,20 +44,24 @@ export const MenuApp = () => {
             collapsed={collapsed}
             className={s.wrapper}
             width={208}
+            collapsedWidth={64}
         >
             <TriggerMenu collapsed={collapsed} setCollapsed={setCollapsed} />
-            <div className={s.logo}>
-                <LogoMain width={'133'} height={'33'} />
+            <div className={collapsed ? `${s.logoSmall}` : `${s.logo}`}>
+                {collapsed && <LogoSmall width={'28'} height={'26'} />}
+                {!collapsed && <LogoMain width={'133'} height={'33'} />}
             </div>
             <Menu>
                 {items.map((item) => (
                     <Menu.Item key={item.key}>
                         <span className={s.icon}>{item.icon}</span>
-                        <span>{item.label}</span>
+                        {!collapsed && <span>{item.label}</span>}
                     </Menu.Item>
                 ))}
             </Menu>
-            <div>Выход</div>
+            <Button icon={<ExitIcon />} title={'Выход'} className={s.button}>
+                {!collapsed && 'Выход'}
+            </Button>
         </Sider>
     );
 };
