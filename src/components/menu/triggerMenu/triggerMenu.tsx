@@ -15,8 +15,10 @@ export const TriggerMenu = ({ collapsed, setCollapsed, type = 'desktop' }: Props
     const wrapperStyle = mobile ? `${s.wrapperMobile}` : `${s.wrapper}`;
     const buttonStyle = mobile ? `${s.buttonMobile}` : `${s.button}`;
 
+    const id = mobile ? 'sider-switch-mobile' : 'sider-switch';
+
     return (
-        <div className={wrapperStyle}>
+        <div className={wrapperStyle} data-test-id={id}>
             {mobile && <TriggerMobileIcon />}
             {!mobile && <TriggerIcon />}
             <div className={buttonStyle}>
