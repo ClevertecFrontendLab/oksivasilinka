@@ -8,13 +8,25 @@ import s from './app.module.scss';
 import { MenuApp } from '@components/menu/menuApp.tsx';
 import { HeaderApp } from '@components/header/headerApp.tsx';
 import { FooterApp } from '@components/footer/footerApp.tsx';
+import { useEffect, useState } from 'react';
 
 export const App = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakPoint = 576;
+
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+
+    const mobileApp = width <= breakPoint;
+
     return (
         <Layout className={s.container}>
-            <MenuApp />
+            <MenuApp mobileApp={mobileApp} />
             <Layout className={s.page}>
-                <HeaderApp />
+                <HeaderApp mobileApp={mobileApp} />
                 <Routes>
                     <Route path='/' element={<MainPage />} />
                 </Routes>

@@ -9,12 +9,15 @@
     max-width: 1440px;
     margin: 0 auto;
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
     grid-template-areas: 'sider page';
     grid-template-columns: auto 1fr;
 
     .page {
         grid-area: page;
         background: no-repeat right/cover url('src/assets/background/Main-page_light.webp');
+        @media screen and (max-width: 576px) {
+            position: absolute;
+        }
     }
 }

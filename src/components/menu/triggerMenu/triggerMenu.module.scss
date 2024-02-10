@@ -1,64 +1,32 @@
 .wrapper {
-    z-index: 99;
     position: absolute;
-    right: -10px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 66px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        transform: translateY(-50%) skewY(30deg);
-        width: 100%;
-        height: 50%;
-        background-color: var(--character-light-primary-inverse);
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 50%;
-        transform: translateY(50%) skewY(-30deg);
-        width: 100%;
-        height: 50%;
-        background-color: var(--character-light-primary-inverse);
-    }
+    right: -20px;
 
     .button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 20px;
-        left: 10px;
-        display: flex;
-        justify-content: center;
-        z-index: 100;
-        background-color: var(--character-light-primary-inverse);
-
-        svg {
-            width: 14px;
-            height: 14px;
-            fill: var(--character-light-secondary-45);
-        }
-    }
-
-    .shadow {
-        width: 10px;
-        height: 53px;
-        box-shadow: 2px -2px 6px 0 rgba(0, 0, 0, 0.15);
-        position: absolute;
-        background-color: #1c2755;
-        top: 50%;
-        transform: translateY(-50%);
-        right: -10px;
-        z-index: -1;
     }
 }
+
+.wrapperMobile {
+    position: absolute;
+    top: 24px;
+    right: -31px;
+
+    .buttonMobile {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+    }
+}
+
+span {
+    svg {
+        fill: var(--character-light-secondary-45);
+    }
+}
+

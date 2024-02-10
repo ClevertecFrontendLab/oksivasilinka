@@ -1,48 +1,77 @@
-
-
 .wrapper {
-    margin-bottom: 42px;
+    margin-bottom: 46px;
     padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     background-color: transparent;
+    @media screen and (max-width: 576px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0 16px;
+    }
 
     .buttonLink {
         border: none;
         background-color: transparent;
         box-shadow: none;
+        @media screen and (max-width: 576px) {
+            padding: 36px;
+        }
 
         .link {
             color: var(--primary-light-6);
             font-size: var(--font-size-16);
+            line-height: var(--font-line-height);
         }
     }
 
-    .title {
-        font-weight: var(--font-weight-regular);
-        color: var(--primary-light-6);
-        font-size: var(--font-size-16);
-    }
+    .card {
+        width: 240px;
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
 
-    .description {
-        font-size: var(--font-size-14);
-        color: var(--character-light-secondary-45);
-        font-weight: var(--font-weight-regular);
-    }
+        .title {
+            font-weight: var(--font-weight-regular);
+            color: var(--primary-light-6);
+            font-size: var(--font-size-16);
+            line-height: var(--font-line-height);
+            @media screen and (max-width: 576px) {
+                text-align: center;
+            }
+        }
 
-    .actionsBlock {
-        padding: 12px 0;
-        display: flex;
+        .description {
+            display: block;
+            font-size: var(--font-size-14);
+            color: var(--character-light-secondary-45);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-line-height);
+            margin: 8px 0 -7px 0;
+            @media screen and (max-width: 576px) {
+                text-align: center;
+            }
+        }
 
-        .button {
-            width: 50%;
+        .actionsBlock {
+            padding: 18px 0 10px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            box-shadow: none;
-            background-color: transparent;
+            height: 56px;
+
+            .button {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            span svg {
+                fill: var(--character-light-title-85);
+            }
         }
     }
 }

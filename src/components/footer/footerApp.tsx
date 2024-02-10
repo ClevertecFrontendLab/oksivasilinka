@@ -1,6 +1,5 @@
-import { Button, Layout, Typography } from 'antd';
+import { Button, Card, Layout, Typography } from 'antd';
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
-import { CardActions } from '@components/cards/cardActions/cardActions.tsx';
 import s from './footerApp.module.scss';
 
 const { Link, Title, Text } = Typography;
@@ -15,7 +14,8 @@ export const FooterApp = () => {
                 </Link>
             </Button>
 
-            <CardActions
+            <Card
+                className={s.card}
                 title={
                     <>
                         <Title className={s.title} level={4}>
@@ -24,17 +24,16 @@ export const FooterApp = () => {
                         <Text className={s.description}>Доступно в PRO-тарифе</Text>
                     </>
                 }
-                content={
-                    <div className={s.actionsBlock}>
-                        <Button className={s.button} icon={<AndroidFilled />} title={'Android OS'}>
-                            Android OS
-                        </Button>
-                        <Button className={s.button} icon={<AppleFilled />} title={'Apple iOS'}>
-                            Apple iOS
-                        </Button>
-                    </div>
-                }
-            />
+            >
+                <div className={s.actionsBlock}>
+                    <Button className={s.button} icon={<AndroidFilled />} title={'Android OS'}>
+                        Android OS
+                    </Button>
+                    <Button className={s.button} icon={<AppleFilled />} title={'Apple iOS'}>
+                        Apple iOS
+                    </Button>
+                </div>
+            </Card>
         </Footer>
     );
 };
