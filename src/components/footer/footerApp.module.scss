@@ -1,5 +1,5 @@
 .wrapper {
-    margin-bottom: 46px;
+    margin-bottom: 42px;
     padding: 0 24px;
     display: flex;
     justify-content: space-between;
@@ -15,6 +15,7 @@
         border: none;
         background-color: transparent;
         box-shadow: none;
+        padding-bottom: 30px;
         @media screen and (max-width: 576px) {
             padding-top: 36px;
             padding-bottom: 30px;
@@ -31,6 +32,12 @@
         width: 240px;
         @media screen and (max-width: 576px) {
             width: 100%;
+        }
+
+        :global {
+            div.ant-card-head-title {
+                padding: 12px 0 16px;
+            }
         }
 
         .title {
@@ -56,7 +63,7 @@
         }
 
         .actionsBlock {
-            padding: 18px 0 10px;
+            padding: 14px 0 10px;
             display: flex;
             height: 56px;
 

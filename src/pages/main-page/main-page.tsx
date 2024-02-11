@@ -1,14 +1,18 @@
 import { Layout, Typography } from 'antd';
-import React from 'react';
 import { CalendarTwoTone, HeartFilled } from '@ant-design/icons';
 import s from './main-page.module.scss';
 import { ProfileIcon } from '@components/icons';
 import { CardsActions, TextBlock } from '@components/common';
+import cl from 'classnames';
 
 const { Content } = Layout;
 const { Title, Text } = Typography;
 
-export const MainPage: React.FC = () => {
+type Props = {
+    collapsed: boolean;
+};
+
+export const MainPage = ({ collapsed }: Props) => {
     const actions = [
         {
             key: 'action-01',
@@ -29,8 +33,11 @@ export const MainPage: React.FC = () => {
             icon: <ProfileIcon />,
         },
     ];
+
+    const contentCN = cl(s.content, { [s.contentMobile]: !collapsed });
+
     return (
-        <Content className={s.content}>
+        <Content className={contentCN}>
             <TextBlock
                 content={
                     <Text className={s.text}>

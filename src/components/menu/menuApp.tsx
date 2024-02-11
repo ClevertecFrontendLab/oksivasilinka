@@ -1,5 +1,4 @@
 import { CalendarTwoTone, HeartFilled, TrophyFilled } from '@ant-design/icons';
-import { useState } from 'react';
 import { Button, Layout, Menu } from 'antd';
 import s from './menuApp.module.scss';
 import { ExitIcon, ProfileIcon } from '@components/icons';
@@ -9,10 +8,10 @@ const { Sider } = Layout;
 
 type Props = {
     mobileApp: boolean;
+    collapsed: boolean;
+    setCollapsed: (collapsed: boolean) => void;
 };
-export const MenuApp = ({ mobileApp }: Props) => {
-    const [collapsed, setCollapsed] = useState(false);
-
+export const MenuApp = ({ mobileApp, collapsed, setCollapsed }: Props) => {
     const items = [
         {
             key: '1',
@@ -35,6 +34,7 @@ export const MenuApp = ({ mobileApp }: Props) => {
             label: 'Профиль',
         },
     ];
+
     return (
         <Sider
             trigger={null}

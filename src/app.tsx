@@ -19,16 +19,17 @@ export const App = () => {
         window.addEventListener('resize', handleWindowResize);
         return () => window.removeEventListener('resize', handleWindowResize);
     }, []);
+    const [collapsed, setCollapsed] = useState(false);
 
     const mobileApp = width <= breakPoint;
 
     return (
         <Layout className={s.container}>
-            <MenuApp mobileApp={mobileApp} />
+            <MenuApp mobileApp={mobileApp} collapsed={collapsed} setCollapsed={setCollapsed} />
             <Layout className={s.page}>
                 <HeaderApp mobileApp={mobileApp} />
                 <Routes>
-                    <Route path='/' element={<MainPage />} />
+                    <Route path='/' element={<MainPage collapsed={collapsed} />} />
                 </Routes>
                 <FooterApp />
             </Layout>
