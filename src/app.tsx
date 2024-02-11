@@ -5,9 +5,9 @@ import 'antd/dist/antd.css';
 import './styles/index.scss';
 import { Layout } from 'antd';
 import s from './app.module.scss';
-import { MenuApp } from '@components/menu/menuApp.tsx';
-import { HeaderApp } from '@components/header/headerApp.tsx';
-import { FooterApp } from '@components/footer/footerApp.tsx';
+import { MenuApp } from '@components/menu';
+import { HeaderApp } from '@components/header';
+import { FooterApp } from '@components/footer';
 import { useEffect, useState } from 'react';
 
 export const App = () => {

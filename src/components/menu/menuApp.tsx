@@ -1,28 +1,22 @@
-import { HeartFilled, TrophyFilled } from '@ant-design/icons';
+import { CalendarTwoTone, HeartFilled, TrophyFilled } from '@ant-design/icons';
 import { useState } from 'react';
 import { Button, Layout, Menu } from 'antd';
-import { LogoMain } from '@components/icons/logo/logoMain.tsx';
 import s from './menuApp.module.scss';
-import { CalendarIcon } from '@components/icons/other/calendarIcon.tsx';
-import { ProfileIcon } from '@components/icons/other/profileIcon.tsx';
-import { TriggerMenu } from '@components/menu/triggerMenu/triggerMenu.tsx';
-import { ExitIcon } from '@components/icons/other/exitIcon.tsx';
-import { LogoSmall } from '@components/icons/logo/logoSmall.tsx';
-import { LogoMobile } from '@components/icons/logo/logoMobile.tsx';
+import { ExitIcon, ProfileIcon } from '@components/icons';
+import { Logo, TriggerMenu } from '@components/menu';
 
 const { Sider } = Layout;
 
 type Props = {
     mobileApp: boolean;
 };
-
 export const MenuApp = ({ mobileApp }: Props) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const items = [
         {
             key: '1',
-            icon: <CalendarIcon />,
+            icon: <CalendarTwoTone twoToneColor={['#061178', '#061178']} />,
             label: 'Календарь',
         },
         {
@@ -42,66 +36,34 @@ export const MenuApp = ({ mobileApp }: Props) => {
         },
     ];
     return (
-        <>
-            {!mobileApp && (
-                <Sider
-                    trigger={null}
-                    collapsible
-                    theme={'light'}
-                    collapsed={collapsed}
-                    className={s.wrapper}
-                    width={208}
-                    collapsedWidth={64}
-                >
-                    <TriggerMenu collapsed={collapsed} setCollapsed={setCollapsed} />
-                    <div className={collapsed ? `${s.logoSmall}` : `${s.logo}`}>
-                        {collapsed && <LogoSmall width={'28'} height={'26'} />}
-                        {!collapsed && <LogoMain width={'133'} height={'33'} />}
-                    </div>
+        <Sider
+            trigger={null}
+            collapsible
+            theme={'light'}
+            collapsed={collapsed}
+            className={!mobileApp ? `${s.wrapper}` : `${s.wrapperMobile}`}
+            width={mobileApp ? 106 : 208}
+            collapsedWidth={mobileApp ? 1 : 64}
+        >
+            <TriggerMenu
+                type={mobileApp ? 'mobile' : 'desktop'}
+                collapsed={collapsed}
+                setCollapsed={setCollapsed}
+            />
+            <Logo mobileApp={mobileApp} collapsed={collapsed} />
 
-                    <Menu>
-                        {items.map((item) => (
-                            <Menu.Item key={item.key}>
-                                <span className={s.icon}>{item.icon}</span>
-                                {!collapsed && <span>{item.label}</span>}
-                            </Menu.Item>
-                        ))}
-                    </Menu>
+            <Menu>
+                {items.map((item) => (
+                    <Menu.Item key={item.key}>
+                        {!mobileApp && <span className={s.icon}>{item.icon}</span>}
+                        {!collapsed && <span className={s.label}>{item.label}</span>}
+                    </Menu.Item>
+                ))}
+            </Menu>
 
-                    <Button icon={<ExitIcon />} title={'Выход'} className={s.button}>
-                        {!collapsed && 'Выход'}
-                    </Button>
-                </Sider>
-            )}
-
-            {mobileApp && (
-                <Sider
-                    trigger={null}
-                    collapsible
-                    theme={'light'}
-                    collapsed={collapsed}
-                    className={s.wrapperMobile}
-                    width={106}
-                    collapsedWidth={1}
-                >
-                    <TriggerMenu
-                        type={'mobile'}
-                        collapsed={collapsed}
-                        setCollapsed={setCollapsed}
-                    />
-                    <div className={s.logoSmallMobile}>{!collapsed && <LogoMobile />}</div>
-                    <Menu>
-                        {items.map((item) => (
-                            <Menu.Item key={item.key}>
-                                {!collapsed && <span>{item.label}</span>}
-                            </Menu.Item>
-                        ))}
-                    </Menu>
-                    <Button title={'Выход'} className={s.buttonMobile}>
-                        {!collapsed && 'Выход'}
-                    </Button>
-                </Sider>
-            )}
-        </>
+            <Button icon={!mobileApp && <ExitIcon />} title={'Выход'} className={s.button}>
+                {!collapsed && 'Выход'}
+            </Button>
+        </Sider>
     );
 };

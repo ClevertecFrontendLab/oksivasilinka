@@ -1,8 +1,7 @@
 import { createElement } from 'react';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import s from './triggerMenu.module.scss';
-import { TriggerMobileIcon } from '@components/menu/triggerMenu/trigerIcon/triggerMobileIcon.tsx';
-import { TriggerIcon } from '@components/menu/triggerMenu/trigerIcon/triggerIcon.tsx';
+import { TriggerIcon, TriggerMobileIcon } from '@components/menu';
 
 type Props = {
     collapsed: boolean;

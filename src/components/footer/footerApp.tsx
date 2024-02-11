@@ -6,6 +6,11 @@ const { Link, Title, Text } = Typography;
 const { Footer } = Layout;
 
 export const FooterApp = () => {
+    const cardButtons = [
+        { key: 'btn-01', icon: <AndroidFilled />, title: 'Android OS' },
+        { key: 'btn-02', icon: <AppleFilled />, title: 'Apple iOS' },
+    ];
+
     return (
         <Footer className={s.wrapper}>
             <Button className={s.buttonLink}>
@@ -26,12 +31,16 @@ export const FooterApp = () => {
                 }
             >
                 <div className={s.actionsBlock}>
-                    <Button className={s.button} icon={<AndroidFilled />} title={'Android OS'}>
-                        Android OS
-                    </Button>
-                    <Button className={s.button} icon={<AppleFilled />} title={'Apple iOS'}>
-                        Apple iOS
-                    </Button>
+                    {cardButtons.map((item) => (
+                        <Button
+                            key={item.key}
+                            className={s.button}
+                            icon={item.icon}
+                            title={item.title}
+                        >
+                            {item.title}
+                        </Button>
+                    ))}
                 </div>
             </Card>
         </Footer>

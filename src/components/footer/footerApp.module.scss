@@ -16,7 +16,8 @@
         background-color: transparent;
         box-shadow: none;
         @media screen and (max-width: 576px) {
-            padding: 36px;
+            padding-top: 36px;
+            padding-bottom: 30px;
         }
 
         .link {
@@ -48,7 +49,7 @@
             color: var(--character-light-secondary-45);
             font-weight: var(--font-weight-regular);
             line-height: var(--font-line-height);
-            margin: 8px 0 -7px 0;
+            margin: 8px 0 -7px;
             @media screen and (max-width: 576px) {
                 text-align: center;
             }

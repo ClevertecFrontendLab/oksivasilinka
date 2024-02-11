@@ -1,10 +1,9 @@
-import { Button, Card, Layout, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 import React from 'react';
-import { TextBlock } from '@components/cards/textBlock/textBlock.tsx';
-import { HeartFilled } from '@ant-design/icons';
+import { CalendarTwoTone, HeartFilled } from '@ant-design/icons';
 import s from './main-page.module.scss';
-import { CalendarIcon } from '@components/icons/other/calendarIcon.tsx';
-import { ProfileIcon } from '@components/icons/other/profileIcon.tsx';
+import { ProfileIcon } from '@components/icons';
+import { CardsActions, TextBlock } from '@components/common';
 
 const { Content } = Layout;
 const { Title, Text } = Typography;
@@ -21,7 +20,7 @@ export const MainPage: React.FC = () => {
             key: 'action-02',
             title: 'Назначить календарь',
             titleButton: 'Календарь',
-            icon: <CalendarIcon />,
+            icon: <CalendarTwoTone />,
         },
         {
             key: 'action-03',
@@ -59,25 +58,7 @@ export const MainPage: React.FC = () => {
                     </Title>
                 }
             />
-            <div className={s.cardsActions}>
-                {actions.map((card) => (
-                    <Card
-                        className={s.card}
-                        key={card.key}
-                        title={
-                            <Title className={s.titleCard} level={4}>
-                                {card.title}
-                            </Title>
-                        }
-                    >
-                        <div className={s.contentCard}>
-                            <Button className={s.button} icon={card.icon} title={card.titleButton}>
-                                {card.titleButton}
-                            </Button>
-                        </div>
-                    </Card>
-                ))}
-            </div>
+            <CardsActions actions={actions} />
         </Content>
     );
 };
