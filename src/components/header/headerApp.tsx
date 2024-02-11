@@ -1,9 +1,9 @@
-import { Button, Layout, Typography } from 'antd';
+import { Breadcrumb, Button, Layout, Typography } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 import s from './headerApp.module.scss';
 
 const { Header } = Layout;
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 type Props = {
     mobileApp: boolean;
@@ -12,8 +12,9 @@ type Props = {
 export const HeaderApp = ({ mobileApp }: Props) => {
     return (
         <Header className={s.wrapper}>
-            <Text className={s.path}>Главная</Text>
-
+            <Breadcrumb>
+                <Breadcrumb.Item href={'/'}>Главная</Breadcrumb.Item>
+            </Breadcrumb>
             <Title className={s.title}>
                 Приветствуем тебя в&nbsp;CleverFit — приложении,
                 <br />
@@ -26,7 +27,7 @@ export const HeaderApp = ({ mobileApp }: Props) => {
                 icon={<SettingOutlined />}
                 title={'Настройки'}
             >
-                {!mobileApp && ' Настройки'}
+                {!mobileApp && 'Настройки'}
             </Button>
         </Header>
     );
