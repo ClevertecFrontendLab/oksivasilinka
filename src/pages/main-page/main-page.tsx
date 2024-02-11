@@ -1,9 +1,9 @@
 import { Layout, Typography } from 'antd';
-import { CalendarTwoTone, HeartFilled } from '@ant-design/icons';
-import s from './main-page.module.scss';
-import { ProfileIcon } from '@components/icons';
 import { CardsActions, TextBlock } from '@components/common';
+import { CalendarTwoTone, HeartFilled } from '@ant-design/icons';
+import { ProfileIcon } from '@components/icons';
 import cl from 'classnames';
+import s from './main-page.module.scss';
 
 const { Content } = Layout;
 const { Title, Text } = Typography;

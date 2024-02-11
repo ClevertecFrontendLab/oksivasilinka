@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import useMobileApp from '@hooks/useMobileApp.ts';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from '@pages/main-page';
 import 'normalize.css';
@@ -8,20 +10,10 @@ import s from './app.module.scss';
 import { MenuApp } from '@components/menu';
 import { HeaderApp } from '@components/header';
 import { FooterApp } from '@components/footer';
-import { useEffect, useState } from 'react';
 
 export const App = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-    const breakPoint = 576;
-
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-        window.addEventListener('resize', handleWindowResize);
-        return () => window.removeEventListener('resize', handleWindowResize);
-    }, []);
     const [collapsed, setCollapsed] = useState(false);
-
-    const mobileApp = width <= breakPoint;
+    const mobileApp = useMobileApp();
 
     return (
         <Layout className={s.container}>

@@ -1,8 +1,9 @@
-import { CalendarTwoTone, HeartFilled, TrophyFilled } from '@ant-design/icons';
 import { Button, Layout, Menu } from 'antd';
-import s from './menuApp.module.scss';
-import { ExitIcon, ProfileIcon } from '@components/icons';
 import { Logo, TriggerMenu } from '@components/menu';
+import { ExitIcon, ProfileIcon } from '@components/icons';
+import { CalendarTwoTone, HeartFilled, TrophyFilled } from '@ant-design/icons';
+import cl from 'classnames';
+import s from './menuApp.module.scss';
 
 const { Sider } = Layout;
 
@@ -34,6 +35,7 @@ export const MenuApp = ({ mobileApp, collapsed, setCollapsed }: Props) => {
             label: 'Профиль',
         },
     ];
+    const wrapperCN = cl({ [s.wrapperMobile]: mobileApp, [s.wrapper]: !mobileApp });
 
     return (
         <Sider
@@ -41,15 +43,11 @@ export const MenuApp = ({ mobileApp, collapsed, setCollapsed }: Props) => {
             collapsible
             theme={'light'}
             collapsed={collapsed}
-            className={!mobileApp ? `${s.wrapper}` : `${s.wrapperMobile}`}
+            className={wrapperCN}
             width={mobileApp ? 106 : 208}
             collapsedWidth={mobileApp ? 1 : 64}
         >
-            <TriggerMenu
-                type={mobileApp ? 'mobile' : 'desktop'}
-                collapsed={collapsed}
-                setCollapsed={setCollapsed}
-            />
+            <TriggerMenu mobile={mobileApp} collapsed={collapsed} setCollapsed={setCollapsed} />
             <Logo mobileApp={mobileApp} collapsed={collapsed} />
 
             <Menu>
