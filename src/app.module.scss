@@ -2,6 +2,10 @@
     .ant-layout.ant-layout-has-sider > .ant-layout, .ant-layout.ant-layout-has-sider > .ant-layout-content {
         width: 100%;
     }
+
+    .ant-layout {
+        background: none;
+    }
 }
 
 .container {
@@ -12,21 +16,11 @@
     min-height: 100vh;
     grid-template-areas: 'sider page';
     grid-template-columns: auto 1fr;
-    @media screen and (max-width: 992px) {
-        background: no-repeat center/cover url('src/assets/background/Main-page_light.webp');
-    }
-    @media screen and (max-width: 576px) {
-        background: none;
-    }
+    background: no-repeat center/cover url('src/assets/background/Main-page_light.webp');
 
     .page {
         grid-area: page;
-        background: no-repeat right/cover url('src/assets/background/Main-page_light.webp');
-        @media screen and (max-width: 992px) {
-            background: none;
-        }
         @media screen and (max-width: 576px) {
-          background: no-repeat center/cover url('src/assets/background/Main-page_light.webp');
             position: absolute;
         }
     }
