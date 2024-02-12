@@ -10,13 +10,17 @@ import s from './app.module.scss';
 import { MenuApp } from '@components/menu';
 import { HeaderApp } from '@components/header';
 import { FooterApp } from '@components/footer';
+import cl from 'classnames';
 
 export const App = () => {
     const [collapsed, setCollapsed] = useState(false);
     const mobileApp = useMobileApp();
 
+    const imageCN = cl(s.image, { [s.imageMobile]: collapsed });
+
     return (
         <Layout className={s.container}>
+            <div className={imageCN}></div>
             <MenuApp mobileApp={mobileApp} collapsed={collapsed} setCollapsed={setCollapsed} />
             <Layout className={s.page}>
                 <HeaderApp mobileApp={mobileApp} />
