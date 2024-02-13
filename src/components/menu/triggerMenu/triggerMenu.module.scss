@@ -1,0 +1,32 @@
+.wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+
+    .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.wrapperMobile {
+    position: absolute;
+    top: 24px;
+    right: -31px;
+
+    .buttonMobile {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+    }
+}
+
+span {
+    svg {
+        fill: var(--character-light-secondary-45);
+    }
+}
+

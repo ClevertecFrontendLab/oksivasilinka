@@ -1,0 +1,86 @@
+.wrapper {
+    margin-bottom: 42px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: transparent;
+    @media screen and (max-width: 576px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0 16px;
+    }
+
+    .buttonLink {
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        padding-bottom: 30px;
+        @media screen and (max-width: 576px) {
+            padding-top: 36px;
+            padding-bottom: 30px;
+        }
+
+        .link {
+            color: var(--primary-light-6);
+            font-size: var(--font-size-16);
+            line-height: var(--font-line-height);
+        }
+    }
+
+    .card {
+        width: 240px;
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
+
+        :global {
+            div.ant-card-head-title {
+                padding: 12px 0 16px;
+            }
+        }
+
+        .title {
+            font-weight: var(--font-weight-regular);
+            color: var(--primary-light-6);
+            font-size: var(--font-size-16);
+            line-height: var(--font-line-height);
+            @media screen and (max-width: 576px) {
+                text-align: center;
+            }
+        }
+
+        .description {
+            display: block;
+            font-size: var(--font-size-14);
+            color: var(--character-light-secondary-45);
+            font-weight: var(--font-weight-regular);
+            line-height: var(--font-line-height);
+            margin: 8px 0 -7px;
+            @media screen and (max-width: 576px) {
+                text-align: center;
+            }
+        }
+
+        .actionsBlock {
+            padding: 14px 0 10px;
+            display: flex;
+            height: 56px;
+
+            .button {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+            }
+
+            span svg {
+                fill: var(--character-light-title-85);
+            }
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+.content {
+    max-width: 800px;
+    padding: 24px;
+    @media screen and (max-width: 576px) {
+        padding: 24px 16px;
+    }
+
+    .text {
+        color: var(--primary-light-9);
+        line-height: var(--font-line-height);
+    }
+
+    .textBlock {
+        margin-bottom: 16px;
+
+        .title {
+            font-weight: var(--font-weight-medium);
+            font-size: 20px;
+            margin: 0;
+            line-height: var(--font-line-height);
+        }
+    }
+}
+
+.contentMobile {
+    @media screen and (max-width: 576px) {
+        padding: 24px;
+    }
+}

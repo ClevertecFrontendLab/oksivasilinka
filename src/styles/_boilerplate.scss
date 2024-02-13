@@ -1,0 +1,53 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    min-width: 360px;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+body {
+    font-family: var(--font-family-primary), sans-serif;
+    line-height: var(--font-line-height);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-16);
+    color: var(--character-light-title-85);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+div.ant-card-head {
+    margin: 0;
+}
+
+div.ant-card-head-title {
+    padding: 12px 0;
+}
+
+div.ant-card-body {
+     padding: 0;
+ }

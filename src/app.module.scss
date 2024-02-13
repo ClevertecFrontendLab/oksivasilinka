@@ -1,0 +1,63 @@
+:global {
+    .ant-layout.ant-layout-has-sider > .ant-layout, .ant-layout.ant-layout-has-sider > .ant-layout-content {
+        width: 100%;
+    }
+
+    .ant-layout {
+        background: none;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    min-height: 1024px;
+    height: 100%;
+    grid-template-areas: 'sider page';
+    grid-template-columns: auto 1fr;
+    position: relative;
+    overflow-y: auto;
+    @media screen and (max-width: 992px) {
+        min-height: 100vh;
+        max-height: 1194px;
+    }
+    @media screen and (max-width: 576px) {
+        grid-template-areas: 'page';
+        grid-template-columns: 1fr;
+    }
+
+
+    .image {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        background: no-repeat center/cover url('src/assets/background/Main-page_light.webp');
+        position: fixed;
+        z-index: -1;
+        height: 1024px;
+        @media screen and (max-width: 992px) {
+            height: 1194px;
+            background-attachment: local;
+        }
+        @media screen and (max-width: 576px) {
+            height: 100vh;
+            background-attachment: fixed;
+        }
+    }
+
+    .imageMobile {
+        @media screen and (max-width: 576px) {
+            height: 1362px;
+              background-attachment: inherit;
+        }
+    }
+
+    .page {
+        grid-area: page;
+        @media screen and (max-width: 576px) {
+            position: absolute;
+        }
+    }
+}
